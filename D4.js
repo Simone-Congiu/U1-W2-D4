@@ -12,14 +12,15 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-     const  area =function(l1,l2){
-    let areaRett=l1*l2
-    console.log("area rettangolo"+" "+areaRett)
+     function area(l1,l2){
+    let area=l1*l2
+    return area
+    
     
     
 }
- area(10,12)
- area(10,10)
+ console.log(area(10,12))
+ console.log(area(10,10))
 
 
 
@@ -33,18 +34,19 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const crazySum= function(int1,int2){
-    let somma=int1+int2
+function crazySum (int1,int2){
     if(int1===int2){
-       somma= (int1+int2)*3
+       return (int1+int2)*3
     }
-    console.log(somma)
+    else{
+        return int1+int2
+    }
+
       
 
     }
-    crazySum(5,5)
-    crazySum(2,2)
-    crazySum(5,1)
+    console.log(crazySum(5,5))
+    console.log(crazySum(5,1))
 
     
 
@@ -64,20 +66,18 @@ const crazySum= function(int1,int2){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const crazyDiff=function(n1,n2=19){
-    let difference=n1/n2
+function crazyDiff (n1,n2=19){
     if(n1>19){
-    difference=difference*3
+       return (n1-n2)*3
     }
     else{
-        console.log()
+        return n1-n2
     }
-    console.log(difference)
     
 }
 
-crazyDiff(10)
-crazyDiff(38)
+console.log(crazyDiff(30))
+console.log(crazyDiff(38))
 
 
 
@@ -90,21 +90,18 @@ crazyDiff(38)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const boundary= function(n){
-    let interNumber=n
-    if(n>20 && n<=100){
-        console.log("true")}
-        else if(n===400)
-        console.log("true")
- else{
-        console.log("your number is false")
-        }
-        return interNumber
-        
-    }
-    boundary(80)
-    boundary(400)
-    boundary(10)
+function boundary(n){
+    if(n>20 && n<=100 || n===400){
+return true
+}
+else{
+    return false
+}
+}
+console.log(boundary(2.5))
+console.log(boundary(50))
+console.log(boundary(10))
+
 
 
 
@@ -122,6 +119,18 @@ const boundary= function(n){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function epify(str){
+    if(str.slice(0,7)==="EPICODE"){
+    return str
+}
+else{
+    return "EPICODE"+str
+}
+}
+
+console.log(epify("ciao"))
+console.log(epify("EPICODE is the best" ))
+console.log(epify("mi chiamo"))
 
 
 
@@ -191,6 +200,16 @@ console.log(reverseString("Ciao"))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function upperFirst(phrase){
+      let phrasearray= phrase.split(" ")
+      let finalphrase=""
+      for(let i=0;i<phrasearray.length;i++){
+          finalphrase+=phrasearray[i].charAt(0).toUpperCase()+phrasearray[i].slice(1,7)+" "
+          
+      }
+      return finalphrase
+}
+console.log(upperFirst("ciao mi chiamo simone"))
 
  
 
@@ -203,6 +222,16 @@ console.log(reverseString("Ciao"))
  della stringa originale.
 */
 
+
+
+function cutString(str){
+       let newstr= str.slice(1,str.length-1)
+    
+    return newstr
+}
+
+console.log(cutString("ciao simone Come sta"))
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 10
@@ -210,3 +239,13 @@ console.log(reverseString("Ciao"))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+
+function giveMeRandom(n){
+    let narray=[]
+    for(let i=0;i<n;i++){
+    narray.push(Math.floor(Math.random()*11))}
+    return narray
+
+}
+console.log(giveMeRandom(8))
